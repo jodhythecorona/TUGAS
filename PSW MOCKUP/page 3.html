@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUSTOMER REVIEW</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #0055a4;
+            background-color: white;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 40px 0 80px 0;
+            color: #333;
+        }
+
+        .review-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .review-container {
+            display: flex;
+            justify-content: center;
+            transition: transform 0.5s ease;
+        }
+
+        .review-item {
+            width: 300px;
+            height: 380px;
+            background-color: #e5e5e5;
+            margin: 0 20px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .review-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, transparent calc(50% - 1px), #999, transparent calc(50% + 1px)),
+                          linear-gradient(to bottom left, transparent calc(50% - 1px), #999, transparent calc(50% + 1px));
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #e5e5e5;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title -->
+    <div class="title">CUSTOMER REVIEW</div>
+
+    <!-- Review Slider -->
+    <div class="review-slider">
+        <div class="review-container" id="reviewContainer">
+            <div class="review-item" id="review1"></div>
+            <div class="review-item" id="review2"></div>
+            <div class="review-item" id="review3"></div>
+            <!-- Additional hidden review items -->
+            <div class="review-item" id="review4" style="display: none;"></div>
+            <div class="review-item" id="review5" style="display: none;"></div>
+            <div class="review-item" id="review6" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="slider-dots">
+        <div class="dot" onclick="changeSlide(0)"></div>
+        <div class="dot active" onclick="changeSlide(1)"></div>
+        <div class="dot" onclick="changeSlide(2)"></div>
+    </div>
+
+    <script>
+        // Current slide index (0-based)
+        let currentSlide = 1;
+        
+        // Total number of slides
+        const totalSlides = 3;
+        
+        // All review items (including hidden ones)
+        const allReviews = [
+            document.getElementById('review1'),
+            document.getElementById('review2'),
+            document.getElementById('review3'),
+            document.getElementById('review4'),
+            document.getElementById('review5'),
+            document.getElementById('review6')
+        ];
+        
+        // Dots for navigation
+        const dots = document.querySelectorAll('.dot');
+        
+        // Function to change the slide
+        function changeSlide(index) {
+            // Update current slide index
+            currentSlide = index;
+            
+            // Update dot status
+            dots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            
+            // Define which reviews to show based on current slide
+            let visibleReviews;
+            
+            if (currentSlide === 0) {
+                visibleReviews = [allReviews[3], allReviews[0], allReviews[1]];
+            } else if (currentSlide === 1) {
+                visibleReviews = [allReviews[0], allReviews[1], allReviews[2]];
+            } else {
+                visibleReviews = [allReviews[1], allReviews[2], allReviews[4]];
+            }
+            
+            // Hide all reviews first
+            allReviews.forEach(review => {
+                review.style.display = 'none';
+            });
+            
+            // Show only the visible reviews
+            visibleReviews.forEach((review, i) => {
+                review.style.display = 'block';
+                // Reset any transformations
+                review.style.transform = 'none';
+            });
+        }
+        
+        // Initialize with the default slide (middle dot)
+        window.onload = function() {
+            changeSlide(1);
+        };
+    </script>
+</body>
+</html>

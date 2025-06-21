@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Makanan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Animasi Kartu */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Global Layout */
+  body {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #fff8f0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .header-logo {
+    height: 80px;
+    object-fit: contain;
+  }
+
+  nav.d-flex.gap-3 a.nav-link {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: #ffceae;
+    color: #333 !important;
+    font-weight: 500;
+    border: 1px solid #333;
+    transition: all 0.2s ease-in-out;
+  }
+
+  nav.d-flex.gap-3 a.nav-link:hover {
+    background-color: #ffc195;
+    transform: scale(1.05);
+  }
+
+  /* Banner */
+  .banner-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+  }
+
+  /* Judul */
+  .menu-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+  }
+
+  /* Kartu */
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .btn-detail, .btn-order {
+    font-size: 0.9rem;
+  }
+
+  .btn-detail {
+    background-color: #9b6f39;
+    color: white;
+  }
+
+  .btn-order {
+    background-color: #198754;
+    color: white;
+  }
+
+  .btn-detail:hover {
+    background-color: #7a4f00;
+  }
+
+  .btn-order:hover {
+    background-color: #146c43;
+  }
+
+  /* Testimoni */
+  .testimonial-section {
+    margin-top: 80px;
+    padding: 40px 20px;
+    background: #f9efe7;
+    border-radius: 10px;
+  }
+
+  .testimonial {
+    font-style: italic;
+    color: #555;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #9b6f39;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 80px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+  <header class="d-flex justify-content-between align-items-center mb-5">
+    <img src="C:\Users\LEGION\Downloads\BOOTSRAP\Misoqu Logo.png" alt="Logo" class="header-logo">
+    <nav class="d-flex gap-3">
+      <a class="nav-link" href="Menu.html">Home</a>
+      <a class="nav-link" href="customer_review_updated.html">Review</a>
+      <a class="nav-link" href="page2 html.html">Menu</a>
+      <a class="nav-link" href="page4 html.html">About</a>
+    </nav>
+  </header>
+
+  <h1 class="menu-title">MENU MAKANAN KAMI</h1>
+  <!-- Untuk gambar banner, pastikan path nya sudah sesuai -->
+  <img src="Banner Baru.jpg" class="banner-img" alt="Banner">
+
+  <div class="row g-4">
+    <!-- Contoh Kartu Menu -->
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <!-- Ganti gambar dengan path yang lebih generik atau online bila perlu -->
+        <img src="C:\Users\LEGION\Downloads\BOOTSRAP\nasigoreng.jpg" class="card-img-top" alt="Nasi Goreng">
+        <div class="card-body text-center">
+          <h5 class="card-title">Nasi Goreng Special</h5>
+          <p class="text-muted small">Rp 25.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <img src="C:\Users\LEGION\Downloads\BOOTSRAP\ayamlengkuang.jpg" class="card-img-top" alt="Ayam Lengkuas">
+        <div class="card-body text-center">
+          <h5 class="card-title">Ayam Lengkuas</h5>
+          <p class="text-muted small">Rp 30.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <img src="C:\Users\LEGION\Downloads\BOOTSRAP\miso medan.jpg" class="card-img-top" alt="Miso Medan">
+        <div class="card-body text-center">
+          <h5 class="card-title">Miso Medan</h5>
+          <p class="text-muted small">Rp 15.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div>  
+     <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <img src="C:\Users\LEGION\Downloads\BOOTSRAP\Miloes.jpg" class="card-img-top" alt="Milo Es">
+        <div class="card-body text-center">
+          <h5 class="card-title">Milo Es</h5>
+          <p class="text-muted small">Rp 5.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div>  
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <img src="C:\Users\LEGION\Downloads\BOOTSRAP\teh tarik.jpg" class="card-img-top" alt="Teh Tarik">
+        <div class="card-body text-center">
+          <h5 class="card-title">Teh Tarik</h5>
+          <p class="text-muted small">Rp 5.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div>  
+     <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <img src="c:\Users\LEGION\Downloads\BOOTSRAP\kopi susu.jpg" class="card-img-top" alt="Kopi Susu">
+        <div class="card-body text-center">
+          <h5 class="card-title">Kopi Susu</h5>
+          <p class="text-muted small">Rp 5.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div> 
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <img src="C:\Users\LEGION\Downloads\BOOTSRAP\risolesmayo.jpg" class="card-img-top" alt="Risoles Mayonaise">
+        <div class="card-body text-center">
+          <h5 class="card-title">Risoles Mayonaise</h5>
+          <p class="text-muted small">Rp 3.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card shadow-sm h-100">
+        <img src="C:\Users\LEGION\Downloads\BOOTSRAP\risolesayam.jpg" class="card-img-top" alt="Risoles Ayam">
+        <div class="card-body text-center">
+          <h5 class="card-title">Risoles Ayam</h5>
+          <p class="text-muted small">Rp 3.000</p>
+          <button class="btn btn-detail btn-sm">Beli</button>
+        </div>
+      </div>
+    </div>
+    <!-- Tambahkan kartu lain dengan struktur yang sama sesuai kebutuhan -->
+  </div>
+
+  <div class="testimonial-section text-center">
+    <h2 class="mb-4">Apa Kata Mereka?</h2>
+    <div id="testimonialCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <p>"Makanan di sini enak banget, pelayanannya juga ramah!" - <strong>Rina</strong></p>
+        </div>
+        <div class="carousel-item">
+          <p>"Nasi gorengnya juara! Porsinya juga pas dan harganya terjangkau." - <strong>Adi</strong></p>
+        </div>
+        <div class="carousel-item">
+          <p>"Saya pesan untuk acara kantor, semuanya puas!" - <strong>Bu Dina</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-5">
+    <h4>Ingin pesan untuk acara spesial?</h4>
+    <p>Hubungi kami sekarang dan dapatkan penawaran menarik untuk pemesanan grup atau katering!</p>
+    <a href="#" class="btn btn-light rounded-pill px-4 mt-3">Hubungi Kami</a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
